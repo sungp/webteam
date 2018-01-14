@@ -1,4 +1,4 @@
-fullstack-nanodegree-vm
+webteam-training
 =============
 
-Common code for the Relational Databases and Full Stack Fundamentals courses
+Project code example for webteam-training for paly robotics
