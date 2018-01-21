@@ -6,12 +6,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def showLink():
-  output = ""
-  output += "<html><body>"
-  output += "<h1>Where would you like to go</h1>"
-  output += "<a href = '/hello'> <h3> Hello </h3> </a>"
-  output += "</body></html>"
-  return output;
+  return render_template('main.html');
 
 @app.route('/hello', methods=['GET', 'POST'])
 def showHello():
