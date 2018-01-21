@@ -6,21 +6,19 @@ app = Flask(__name__)
 
 @app.route('/')
 def showLink():
-  return render_template('main.html');
+  htmlText = render_template('main.html');
+  return htmlText; 
 
 @app.route('/hello', methods=['GET', 'POST'])
 def showHello():
-  output = ""
-  output += "<html><body>"
-  output += "<h1>Hello!</h1>"
-
+  submitMsg = "";
+  
   if request.method == 'POST':
-    output += " <h2> Okay, how about this: </h2>"
-    output += "<h1> %s </h1>" % request.form['message'].strip() 
-  output += '''<form method='POST' enctype='multipart/form-data' action='/hello'><h2>What would you like me to say?</h2><input name="message" type="text" ><input type="submit" value="Submit"> </form>'''
-  output += "</body></html>"
-  return output
-
+    submitMsg = request.form['message'].strip();
+  
+  htmlText = render_template('hello.html', request = request, message = submitMsg);  
+  print htmlText;
+  return htmlText;
 
 if __name__ == '__main__':
     app.debug = True
