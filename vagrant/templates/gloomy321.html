@@ -1,0 +1,15 @@
+<html>
+  <body>
+    <h1>Hello Gloomy321!</h1>
+    {% if request.method == 'POST' %}
+    <h2> Okay, how about this: </h2>
+    <h1> {{message}} </h1>
+    {% endif %}
+    <form method='POST' enctype='multipart/form-data' action='/gloomy321'>
+      <h2>What would you like me to say?</h2>
+      <input name="message" type=\"text\" >
+      <input name="landingpage" type="hidden" value="gloomy321">
+      <input type="submit" value="Submit">
+    </form>
+  </body>
+</html>
