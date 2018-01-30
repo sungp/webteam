@@ -4,5 +4,15 @@
     <a href='{{url_for('showHello')}}'>
       <h3> Hello </h3>
     </a>
+    <div>
+      <h2>Posts So Far</h2>
+        {% for p in posts%}
+        <br>
+        <h3>{{p.subject}}</h3>
+        <a href=#>{{p.user.name}}</a>
+        <p>{{p.content}}</p>
+        <p>created: {{p.date_added}}</p>
+        {% endfor %}
+    </div>
   </body>
 </html>
