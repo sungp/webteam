@@ -13,11 +13,12 @@ def showLink():
 @app.route('/hello', methods=['GET', 'POST'])
 def showHello():
   submitMsg = "";
-  
+  field = "hello";
+
   if request.method == 'POST':
     submitMsg = request.form['message'].strip();
   
-  htmlText = render_template('hello.html', request = request, message = submitMsg);  
+  htmlText = render_template('common.html', request = request, message = submitMsg, field = field);  
   print htmlText;
   return htmlText;
 
@@ -25,6 +26,7 @@ def showHello():
 def showHappy123():
   message = "";
   landingpage = "";
+  field = 'happy123'
 
   if request.method == 'POST':
     dictval = request.form.to_dict()
@@ -33,7 +35,7 @@ def showHappy123():
     landingpage = dictval['landingpage']
     write_file(message, landingpage)
 
-  htmlText = render_template('happy123.html', request = request, message = message, landingpage = landingpage);  
+  htmlText = render_template('common.html', request = request, message = message, landingpage = landingpage, field = field);  
   print htmlText;
   return htmlText;
 
@@ -41,6 +43,7 @@ def showHappy123():
 def showGloomy321():
   message = "";
   landingpage = "";
+  field = "gloomy321";
 
   if request.method == 'POST':
     dictval = request.form.to_dict()
@@ -49,7 +52,7 @@ def showGloomy321():
     landingpage = dictval['landingpage']
     write_file(message, landingpage)
 
-  htmlText = render_template('gloomy321.html', request = request, message = message, landingpage = landingpage);  
+  htmlText = render_template('common.html', request = request, message = message, landingpage = landingpage, field = field);  
   print htmlText;
   return htmlText;
 
