@@ -39,6 +39,7 @@ def showHappy123():
   print htmlText;
   return htmlText;
 
+
 @app.route('/gloomy321', methods=['GET', 'POST'])
 def showGloomy321():
   message = "";
