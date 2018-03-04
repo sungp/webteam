@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Reflections - Team8</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Merriweather:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+    <link href="/static/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/coming-soon.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+
+
+    
+    <div class="overlay"></div>
+
+    <div class="masthead w-50">
+      <div class="masthead-bg"></div>
+      <div class="container h-100">
+        <div class="row h-100">
+          <div class="col-12 my-auto">
+            <div class="masthead-content text-white py-5 py-md-0">
+              <h1 class="mb-3">Reflections</h1>
+              <p class="mb-5">We're working hard to support Team8. Please take a moment to help us understand how we can assist 
+                <strong>Team8</strong>!</p>
+              <div class="input-group input-group-userform">
+                
+                <form class="w-100" method='POST' enctype='multipart/form-data' action='/userform'>
+
+                  {% if request.method == 'POST' %}
+
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <strong>{{successMsg}}</strong> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+
+
+                  {% endif %}
+
+                  <div class="form-group">
+                    <label class="control-label col-xs-3" for="positive">What went well today?</label>
+                    <div class="col-xs-9">
+                        <textarea rows="3" class="form-control" name="positive" id="positive" placeholder="" required></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-xs-3" for="negative">What did not go well today?</label>
+                    <div class="col-xs-9">
+                        <textarea rows="3" class="form-control" name="negative" id="negative" placeholder="" required></textarea>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="mr-sm-2" for="helper">Who can help you?</label>
+                    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="helper" name="helper" required>
+                      <option selected>Choose...</option>
+                      <option value="1">One</option>
+                      <option value="2">Two</option>
+                      <option value="3">Three</option>
+                    </select>
+
+                  </div>
+
+                  <div class="form-group">
+                    <label for="subteam">Who would you like to give a shout out to?</label>
+                    <input type="text" class="form-control" id="shout" name="shout" placeholder="">
+                  </div>
+
+                  
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="social-icons">
+      <ul class="list-unstyled text-center mb-0">
+        <li class="list-unstyled-item">
+          <a href="#">
+            <i class="fa fa-twitter"></i>
+          </a>
+        </li>
+        <li class="list-unstyled-item">
+          <a href="#">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </li>
+        <li class="list-unstyled-item">
+          <a href="#">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="/static/vendor/vide/jquery.vide.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="/static/js/coming-soon.min.js"></script>
+
+  </body>
+
+</html>

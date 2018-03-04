@@ -20,6 +20,29 @@ def showHello():
   print htmlText;
   return htmlText;
 
+@app.route('/userform', methods=['GET', 'POST'])
+def showUserFormPage():
+  positive = "";
+  negative = "";
+  helper = "";
+  shout = "";
+
+  successMsg = 'Thank you for your submission!';
+  
+  if request.method == 'POST':
+    positive = request.form['positive'].strip();
+    negative = request.form['negative'].strip();
+    helper = request.form['helper'].strip();
+    shout = request.form['shout'].strip();
+
+    print "positive : " + positive
+    print "negative : " + negative
+    print "helper : " + helper
+    print "shout : " + shout 
+  
+  htmlText = render_template('userform.html', request = request, positive = positive, negative = negative, helper = helper, shout = shout, successMsg = successMsg);  
+  return htmlText;
+
 if __name__ == '__main__':
     app.debug = True
     app.run(host='0.0.0.0', port=8080)
